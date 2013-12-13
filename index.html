@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+
+<body>
+	
+<style>
+
+#hedtext {
+	font: "Helvetica Neue", Garamond, Helvetica;
+	font-weight: 50px;
+	font-size: 50px;
+  font-style: italic;
+  text-align: center;
+}
+
+#text {
+  font: "Helvetica Neue", Garamond, Helvetica;
+  font-weight: 15px;
+  line-height: 40px
+  font-size: 15px;
+  font-style: normal;
+  width: 500px;
+  height: 100px;
+  text-align: center;
+  position: absolute;
+  top: 100px;
+  right: 60%;
+  left: 30%;
+}
+
+path {
+	fill: black;
+	stroke-width: 1px;
+	stroke: red;
+}
+
+.svg1 {
+  position: absolute;
+  top: 200px;
+  right: 80%;
+  left: 20%;
+}
+
+.chi-zip {
+  fill:#ccc;
+  stroke:darkblue;
+}
+
+.safezone {
+  fill:white;
+  stroke:#fff;
+  stroke-width:5px;
+  position: absolute;
+  top: 200px;
+  right: 60%;
+  left: 30%;
+}
+
+.homicide_2009 {
+  fill:black;
+  stroke:#fff;
+  stroke-width:1px;
+}
+
+.sexoffense_2009 {
+  fill:red;
+  stroke:#fff;
+  stroke-width:1px;
+}
+
+.homicide_2010 {
+  fill:black;
+  stroke:#fff;
+  stroke-width:1px;
+}
+
+.sexoffense_2010 {
+  fill:red;
+  stroke:#fff;
+  stroke-width:1px;
+}
+
+.homicide_2011 {
+  fill:black;
+  stroke:#fff;
+  stroke-width:1px;
+}
+
+.sexoffense_2011 {
+  fill:red;
+  stroke:#fff;
+  stroke-width:1px;
+}
+
+.homicide_2012 {
+  fill:black;
+  stroke:#fff;
+  stroke-width:1px;
+}
+
+.sexoffense_2012 {
+  fill:red;
+  stroke:#fff;
+  stroke-width:1px;
+}
+
+.homicide_2013 {
+  fill:black;
+  stroke:#fff;
+  stroke-width:1px;
+}
+
+.sexoffense_2013 {
+  fill:red;
+  stroke:#fff;
+  stroke-width:1px;
+}
+
+.childoffense_2009 {
+  fill:brown;
+  stroke:#fff;
+  stroke-width:1px;
+}
+
+.childoffense_2010 {
+  fill:brown;
+  stroke:#fff;
+  stroke-width:1px;
+}
+
+.childoffense_2011 {
+  fill:brown;
+  stroke:#fff;
+  stroke-width:1px;
+}
+
+.childoffense_2012 {
+  fill:brown;
+  stroke:#fff;
+  stroke-width:1px;
+}
+
+.childoffense_2013 {
+  fill:brown;
+  stroke:#fff;
+  stroke-width:1px;
+}
+
+   #turnon2009 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-size: 30px;
+    font-weight: 30px;
+    text-shadow: #1e4158 0 1px 0;
+    border: 2px solid #0a3c59;
+    background: #ccc;
+    color: darkblue;
+    position: absolute;
+    top: 480px;
+    left: 200px;
+   }
+
+   #turnon2010 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-size: 30px;
+    font-weight: 30px;
+    text-shadow: #1e4158 0 1px 0;
+    border: 2px solid #0a3c59;
+    background: #ccc;
+    color: darkblue;
+    position: absolute;
+    top: 540px;
+    left: 200px;
+   }
+
+   #turnon2011 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-size: 30px;
+    font-weight: 30px;
+    text-shadow: #1e4158 0 1px 0;
+    border: 2px solid #0a3c59;
+    background: #ccc;
+    color: darkblue;
+    position: absolute;
+    top: 600px;
+    left: 200px;
+   }
+
+   #turnon2012 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-size: 30px;
+    font-weight: 30px;
+    text-shadow: #1e4158 0 1px 0;
+    border: 2px solid #0a3c59;
+    background: #ccc;
+    color: darkblue;
+    position: absolute;
+    top: 660px;
+    left: 200px;
+   }
+
+   #turnon2013 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-size: 30px;
+    font-weight: 30px;
+    text-shadow: #1e4158 0 1px 0;
+    border: 2px solid #0a3c59;
+    background: #ccc;
+    color: darkblue;
+    position: absolute;
+    top: 720px;
+    left: 200px;
+   }
+
+   #legend1 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 400px;
+    right: 500px;
+    background-color: #ccc;
+    color: black;
+    text-align: center;
+   }
+
+   #legend2 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 400px;
+    right: 310px;
+    background-color: #ccc;
+    color: red;
+    text-align: center;
+   }
+
+   #legend3 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 400px;
+    right: 100px;
+    background-color: #ccc;
+    color: brown;
+    text-align: center;
+   }
+
+   #routesadded {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 850px;
+    left: 150px;
+    background-color: #ccc;
+    color: darkblue;
+    text-align: center;
+    visibility: hidden;
+   }
+
+   #reductions {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 850px;
+    right: 150px;
+    background-color: #ccc;
+    color: darkblue;
+    text-align: center;
+    visibility: hidden;
+   }
+
+   #homicideamount_2009 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 480px;
+    right: 500px;
+    background-color: #ccc;
+    color: black;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    visibility: hidden;
+   }
+
+   #sexoffenseamount_2009 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 480px;
+    right: 310px;
+    background-color: #ccc;
+    color: red;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    visibility: hidden;
+   }
+
+   #homicideamount_2010 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 540px;
+    right: 500px;
+    background-color: #ccc;
+    color: black;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    visibility: hidden;
+   }
+
+   #sexoffenseamount_2010 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 540px;
+    right: 310px;
+    background-color: #ccc;
+    color: red;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    visibility: hidden;
+   }
+
+   #homicideamount_2011 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 600px;
+    right: 500px;
+    background-color: #ccc;
+    color: black;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    visibility: hidden;
+   }
+
+   #sexoffenseamount_2011 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 600px;
+    right: 310px;
+    background-color: #ccc;
+    color: red;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    visibility: hidden;
+   }
+
+   #homicideamount_2012 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 660px;
+    right: 500px;
+    background-color: #ccc;
+    color: black;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    visibility: hidden;
+   }
+
+   #sexoffenseamount_2012 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 660px;
+    right: 310px;
+    background-color: #ccc;
+    color: red;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    visibility: hidden;
+   }
+
+   #homicideamount_2013 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 720px;
+    right: 500px;
+    background-color: #ccc;
+    color: black;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    visibility: hidden;
+   }
+
+   #sexoffenseamount_2013 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 720px;
+    right: 310px;
+    background-color: #ccc;
+    color: red;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    visibility: hidden;
+   }
+
+   #childoffense_2009 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 480px;
+    right: 100px;
+    background-color: #ccc;
+    color: brown;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    visibility: hidden;
+   }
+
+   #childoffense_2010 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 540px;
+    right: 100px;
+    background-color: #ccc;
+    color: brown;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    visibility: hidden;
+   }
+
+   #childoffense_2011 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 600px;
+    right: 100px;
+    background-color: #ccc;
+    color: brown;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    visibility: hidden;
+   }
+
+   #childoffense_2012 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 660px;
+    right: 100px;
+    background-color: #ccc;
+    color: brown;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    visibility: hidden;
+   }
+
+   #childoffense_2013 {
+    font: "Helvetica Neue", Garamond, Helvetica;
+    font-weight: 30px;
+    font-size: 30px;
+    font-style: normal;
+    padding: 4px;
+    position: absolute;
+    top: 720px;
+    right: 100px;
+    background-color: #ccc;
+    color: black;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    visibility: hidden;
+   }
+
+
+</style>
+
+
+<!-- Text -->
+<div id="hedtext"> Chicago Safe Passage Routes: How much has Crime Decreased? </div><br><br> 
+<div id="text"> Officials at Chicago Public Schools decided to close almost 50 public schools last summer because of budgetary reasons. Critics of that decision have complained that students will now have to walk to their new schools through dangerous areas of Chicago, particularly in the South Side. CPS has designated areas around CPS schools "safe passage routes" and are working to reduce crime in those particular areas. <br><br> The safe passage program has been in existence unofficially since 2009 and the city of Chicago has seen an average homicide, sex offense and child offense reduction of 21 percent.
+</div>
+
+<!-- Legend -->
+
+<div id="legend1"> Homicides </div>
+<div id="legend2"> Sex Offenses </div>
+<div id="legend3"> Child Offenses </div>
+<div id="routesadded"> 50 Safe Routes Added </div>
+<div id="reductions"> 21.2 percent average reduction </div>
+
+<!-- Buttons -->
+
+<button id="turnon2009" class="active">2009</button>
+<button id="turnon2010">2010</button>
+<button id="turnon2011">2011</button>
+<button id="turnon2012">2012</button>
+<button id="turnon2013">2013</button>
+
+<!-- Homicide/Sex offense amounts -->
+<div id="homicideamount_2009"> 461 </div>
+<div id="sexoffenseamount_2009"> 1224 </div>
+<div id="homicideamount_2010"> 437 </div>
+<div id="sexoffenseamount_2010"> 1224 </div>
+<div id="homicideamount_2011"> 435 </div>
+<div id="sexoffenseamount_2011"> 1043 </div>
+<div id="homicideamount_2012"> 501 </div>
+<div id="sexoffenseamount_2012"> 1012 </div>
+<div id="homicideamount_2013"> 385 </div>
+<div id="sexoffenseamount_2013"> 880 </div>
+<div id="childoffense_2009"> 2486 </div>
+<div id="childoffense_2010"> 2466 </div>
+<div id="childoffense_2011"> 2262 </div>
+<div id="childoffense_2012"> 2106 </div>
+<div id="childoffense_2013"> 2013 </div>
+
+
+
+<script src="assets/js/d3.v3.min.js" charset="utf-8"></script>
+<script src="assets/js/queue.v1.min.js"></script>
+<script src="assets/js/topojson.v1.min.js"></script>
+	
+<script>
+
+//Javascript goes here
+
+
+//SVG box for 2009 murders/sex offenses
+var margin = {top: 5, right: 10, bottom: 5, left: 10};
+    width = 800 - margin.left - margin.right,
+    height = 750 - margin.top - margin.bottom;
+
+var projection = d3.geo.mercator()
+    .scale(60000)
+    .translate([width / 2, height / 2])
+    .center([-87.636566, 41.876959]); //Latitude/Longitude of Chicago
+
+var path = d3.geo.path().projection(projection);
+
+var svg1 = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .attr("class", "svg1")
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+
+
+//Helps load data, in order that you place file names
+queue()
+  	.defer(d3.csv, "saferoutelocations.csv")
+    .defer(d3.csv, "homicide_2009.csv")
+    .defer(d3.csv, "sexoffense_2009.csv")
+    .defer(d3.csv, "homicide_2010.csv")
+    .defer(d3.csv, "sexoffense_2010.csv")
+    .defer(d3.csv, "homicide_2011.csv")
+    .defer(d3.csv, "sexoffense_2011.csv")
+    .defer(d3.csv, "homicide_2012.csv")
+    .defer(d3.csv, "sexoffense_2012.csv")
+    .defer(d3.csv, "homicide_2013.csv")
+    .defer(d3.csv, "sexoffense_2013.csv")
+    .defer(d3.csv, "childoffense_2009.csv")
+    .defer(d3.csv, "childoffense_2010.csv")
+    .defer(d3.csv, "childoffense_2011.csv")
+    .defer(d3.csv, "childoffense_2012.csv")
+    .defer(d3.csv, "childoffense_2013.csv")
+  	.defer(d3.json, "zipbylatlng.json")
+  	.await(ready);
+
+  
+  //Loads data when all data is ready
+	function ready (error, safezone, homicide_2009, sexoffense_2009, homicide_2010, sexoffense_2010, homicide_2011, sexoffense_2011, homicide_2012, sexoffense_2012, homicide_2013, sexoffense_2013, childoffense_2009, childoffense_2010, childoffense_2011, childoffense_2012, childoffense_2013, zip) { 
+
+    var multiPointHomicide_2009 = multiPoint(homicide_2009);
+    var multiPointSexoffense_2009 = multiPoint(sexoffense_2009);
+    var multiPointHomicide_2010 = multiPoint(homicide_2010);
+    var multiPointSexoffense_2010 = multiPoint(sexoffense_2010);
+    var multiPointHomicide_2011 = multiPoint(homicide_2011);
+    var multiPointSexoffense_2011 = multiPoint(sexoffense_2011);
+    var multiPointHomicide_2012 = multiPoint(homicide_2012);
+    var multiPointSexoffense_2012 = multiPoint(sexoffense_2012);
+    var multiPointHomicide_2013 = multiPoint(homicide_2013);
+    var multiPointSexoffense_2013 = multiPoint(sexoffense_2013);
+    var multiPointChildoffense_2009 = multiPoint(childoffense_2009);
+    var multiPointChildoffense_2010 = multiPoint(childoffense_2010);
+    var multiPointChildoffense_2011 = multiPoint(childoffense_2011);
+    var multiPointChildoffense_2012 = multiPoint(childoffense_2012);
+    var multiPointChildoffense_2013 = multiPoint(childoffense_2013);
+    var multiPointSafezone = multiPoint(safezone);
+
+		if (error) { throw "This isn't working."; };
+
+    
+    // Turns coordinates into numbers
+    safezone.forEach(function(d) {
+      d.Latitude = +d.Latitude;
+      d.Longitude = +d.Longitude;
+    });
+
+    homicide_2009.forEach(function(d) {
+      d.Latitude = +d.Latitude;
+      d.Longitude = +d.Longitude;
+    });
+
+    sexoffense_2009.forEach(function(d) {
+      d.Latitude = +d.Latitude;
+      d.Longitude = +d.Longitude;
+    });
+
+    homicide_2010.forEach(function(d) {
+      d.Latitude = +d.Latitude;
+      d.Longitude = +d.Longitude;
+    });
+
+    sexoffense_2010.forEach(function(d) {
+      d.Latitude = +d.Latitude;
+      d.Longitude = +d.Longitude;
+    });
+
+    homicide_2011.forEach(function(d) {
+      d.Latitude = +d.Latitude;
+      d.Longitude = +d.Longitude;
+    });
+
+    sexoffense_2011.forEach(function(d) {
+      d.Latitude = +d.Latitude;
+      d.Longitude = +d.Longitude;
+    });
+
+    homicide_2012.forEach(function(d) {
+      d.Latitude = +d.Latitude;
+      d.Longitude = +d.Longitude;
+    });
+
+    sexoffense_2012.forEach(function(d) {
+      d.Latitude = +d.Latitude;
+      d.Longitude = +d.Longitude;
+    });
+
+    homicide_2013.forEach(function(d) {
+      d.Latitude = +d.Latitude;
+      d.Longitude = +d.Longitude;
+    });
+
+    sexoffense_2013.forEach(function(d) {
+      d.Latitude = +d.Latitude;
+      d.Longitude = +d.Longitude;
+    });
+
+    childoffense_2009.forEach(function(d) {
+      d.Latitude = +d.Latitude;
+      d.Longitude = +d.Longitude;
+    });
+
+    childoffense_2010.forEach(function(d) {
+      d.Latitude = +d.Latitude;
+      d.Longitude = +d.Longitude;
+    });
+
+    childoffense_2011.forEach(function(d) {
+      d.Latitude = +d.Latitude;
+      d.Longitude = +d.Longitude;
+    });
+
+    childoffense_2012.forEach(function(d) {
+      d.Latitude = +d.Latitude;
+      d.Longitude = +d.Longitude;
+    });
+
+    childoffense_2013.forEach(function(d) {
+      d.Latitude = +d.Latitude;
+      d.Longitude = +d.Longitude;
+    });
+
+
+		//Binds data and create one path per GeoJSON feature -- 2009.
+    svg1.selectAll("path")
+       .data(zip.features)
+       .enter()
+       .append("path")
+       .attr("d", path)
+       .attr("class", "chi-zip");
+
+    //Puts 2009 crime latitudes and longitudes on the map.
+    svg1.selectAll(".homicide_2009")
+       .data(multiPointHomicide_2009.coordinates)
+       .enter().append("circle")
+       .attr("r", 3)
+       .attr("class", "homicide_2009")
+       .attr("transform", function(d) { return "translate(" + projection(d) + ")"; })
+       .style('visibility', 'hidden')
+
+    svg1.selectAll(".sexoffense_2009")
+       .data(multiPointSexoffense_2009.coordinates)
+       .enter().append("circle")
+       .attr("r", 3)
+       .attr("class", "sexoffense_2009")
+       .attr("transform", function(d) { return "translate(" + projection(d) + ")"; })
+       .style('visibility', 'hidden')
+
+    svg1.selectAll(".childoffense_2009")
+       .data(multiPointChildoffense_2009.coordinates)
+       .enter().append("circle")
+       .attr("r", 3)
+       .attr("class", "childoffense_2009")
+       .attr("transform", function(d) { return "translate(" + projection(d) + ")"; })
+       .style('visibility', 'hidden')
+
+    //Puts 2010 crime latitudes and longitudes on the map.
+    svg1.selectAll(".homicide_2010")
+       .data(multiPointHomicide_2010.coordinates)
+       .enter().append("circle")
+       .attr("r", 3)
+       .attr("class", "homicide_2010")
+       .attr("transform", function(d) { return "translate(" + projection(d) + ")"; })
+       .style('visibility', 'hidden')
+
+    svg1.selectAll(".sexoffense_2010")
+       .data(multiPointSexoffense_2010.coordinates)
+       .enter().append("circle")
+       .attr("r", 3)
+       .attr("class", "sexoffense_2010")
+       .attr("transform", function(d) { return "translate(" + projection(d) + ")"; })
+       .style('visibility', 'hidden')
+
+    svg1.selectAll(".childoffense_2010")
+       .data(multiPointChildoffense_2010.coordinates)
+       .enter().append("circle")
+       .attr("r", 3)
+       .attr("class", "childoffense_2010")
+       .attr("transform", function(d) { return "translate(" + projection(d) + ")"; })
+       .style('visibility', 'hidden')
+
+    //Puts 2011 crime latitudes and longitudes on the map.
+    svg1.selectAll(".homicide_2011")
+       .data(multiPointHomicide_2011.coordinates)
+       .enter().append("circle")
+       .attr("r", 3)
+       .attr("class", "homicide_2011")
+       .attr("transform", function(d) { return "translate(" + projection(d) + ")"; })
+       .style('visibility', 'hidden')
+
+    svg1.selectAll(".sexoffense_2011")
+       .data(multiPointSexoffense_2011.coordinates)
+       .enter().append("circle")
+       .attr("r", 3)
+       .attr("class", "sexoffense_2011")
+       .attr("transform", function(d) { return "translate(" + projection(d) + ")"; })
+       .style('visibility', 'hidden')
+
+    svg1.selectAll(".childoffense_2011")
+       .data(multiPointChildoffense_2011.coordinates)
+       .enter().append("circle")
+       .attr("r", 3)
+       .attr("class", "childoffense_2011")
+       .attr("transform", function(d) { return "translate(" + projection(d) + ")"; })
+       .style('visibility', 'hidden')
+
+    //Puts 2012 crime latitudes and longitudes on the map.
+    svg1.selectAll(".homicide_2012")
+       .data(multiPointHomicide_2012.coordinates)
+       .enter().append("circle")
+       .attr("r", 3)
+       .attr("class", "homicide_2012")
+       .attr("transform", function(d) { return "translate(" + projection(d) + ")"; })
+       .style('visibility', 'hidden')
+
+    svg1.selectAll(".sexoffense_2012")
+       .data(multiPointSexoffense_2012.coordinates)
+       .enter().append("circle")
+       .attr("r", 3)
+       .attr("class", "sexoffense_2012")
+       .attr("transform", function(d) { return "translate(" + projection(d) + ")"; })
+       .style('visibility', 'hidden')
+
+    svg1.selectAll(".childoffense_2011")
+       .data(multiPointChildoffense_2011.coordinates)
+       .enter().append("circle")
+       .attr("r", 3)
+       .attr("class", "childoffense_2011")
+       .attr("transform", function(d) { return "translate(" + projection(d) + ")"; })
+       .style('visibility', 'hidden')
+
+    //Puts 2013 crime latitudes and longitudes on the map.
+    svg1.selectAll(".homicide_2013")
+       .data(multiPointHomicide_2013.coordinates)
+       .enter().append("circle")
+       .attr("r", 3)
+       .attr("class", "homicide_2013")
+       .attr("transform", function(d) { return "translate(" + projection(d) + ")"; })
+       .style('visibility', 'hidden')
+
+    svg1.selectAll(".sexoffense_2013")
+       .data(multiPointSexoffense_2013.coordinates)
+       .enter().append("circle")
+       .attr("r", 3)
+       .attr("class", "sexoffense_2013")
+       .attr("transform", function(d) { return "translate(" + projection(d) + ")"; })
+       .style('visibility', 'hidden')
+
+    svg1.selectAll(".childoffense_2013")
+       .data(multiPointChildoffense_2013.coordinates)
+       .enter().append("circle")
+       .attr("r", 3)
+       .attr("class", "childoffense_2013")
+       .attr("transform", function(d) { return "translate(" + projection(d) + ")"; })
+       .style('visibility', 'hidden')
+
+    //Puts safe route latitudes/longitudes on the map.
+    svg1.selectAll(".safezone")
+       .data(multiPointSafezone.coordinates)
+       .enter().append("circle")
+       .attr("r", 1)
+       .attr("class", "safezone")
+       .attr("transform", function(d) { return "translate(" + projection(d) + ")"; })
+       .style('visibility', 'hidden')}
+
+  
+  //Cursor becomes pointer on hover
+  d3.select("#turnon2009").on("mouseover", function(){
+        d3.select(this).style( "cursor", "pointer");
+        d3.select(this).style( "background", "white");
+    })
+  d3.select("#turnon2009").on("mouseout", function(){
+        d3.select(this).style( "background", "#ccc");
+    })
+  d3.select("#turnon2010").on("mouseover", function(){
+        d3.select(this).style( "cursor", "pointer");
+        d3.select(this).style( "background", "white");
+    })
+  d3.select("#turnon2010").on("mouseout", function(){
+        d3.select(this).style( "background", "#ccc");
+    })
+  d3.select("#turnon2011").on("mouseover", function(){
+        d3.select(this).style( "cursor", "pointer");
+        d3.select(this).style( "background", "white");
+    })
+  d3.select("#turnon2011").on("mouseout", function(){
+        d3.select(this).style( "background", "#ccc");
+    })
+  d3.select("#turnon2012").on("mouseover", function(){
+        d3.select(this).style( "cursor", "pointer");
+        d3.select(this).style( "background", "white");
+    })
+  d3.select("#turnon2012").on("mouseout", function(){
+        d3.select(this).style( "background", "#ccc");
+    })
+  d3.select("#turnon2013").on("mouseover", function(){
+        d3.select(this).style( "cursor", "pointer");
+        d3.select(this).style( "background", "white");
+    })
+  d3.select("#turnon2013").on("mouseout", function(){
+        d3.select(this).style( "background", "#ccc");
+    })
+
+  //Makes buttons work; makes amount boxes
+  d3.select("#turnon2009").on('click', function(){
+    d3.select('#turnon2009').classed('active', true);
+    d3.selectAll('.sexoffense_2009, .homicide_2009, #homicideamount_2009, #sexoffenseamount_2009, .childoffense_2009, #childoffense_2009').style('visibility', 'visible');
+    d3.selectAll('.sexoffense_2010, .homicide_2010, .sexoffense_2011, .homicide_2011, .sexoffense_2012, .homicide_2012, .sexoffense_2013, .homicide_2013, .safezone, #routesadded, #homicideamount_2010, #sexoffenseamount_2010, #homicideamount_2011, #sexoffenseamount_2011, #homicideamount_2012, #sexoffenseamount_2012, #homicideamount_2013, #sexoffenseamount_2013, .childoffense_2012, .childoffense_2010, .childoffense_2011, .childoffense_2013, #childoffense_2012, #childoffense_2010, #childoffense_2011, #childoffense_2013, #reductions').style('visibility', 'hidden').classed('active', false);
+  })
+
+  d3.select("#turnon2010").on('click', function(){
+    d3.select('#turnon2010').classed('active', true);
+    d3.selectAll('.sexoffense_2010, .homicide_2010, #homicideamount_2010, #sexoffenseamount_2010, .childoffense_2010, #childoffense_2010').style('visibility', 'visible');
+    d3.selectAll('.sexoffense_2009, .homicide_2009, .sexoffense_2011, .homicide_2011, .sexoffense_2012, .homicide_2012, .sexoffense_2013, .homicide_2013, .homicideamount_2009, .safezone, #routesadded, #homicideamount_2009, #sexoffenseamount_2009, #homicideamount_2011, #sexoffenseamount_2011, #homicideamount_2012, #sexoffenseamount_2012, #homicideamount_2013, #sexoffenseamount_2013, .childoffense_2009, .childoffense_2012, .childoffense_2011, .childoffense_2013, #childoffense_2012, #childoffense_2009, #childoffense_2011, #childoffense_2013, #reductions').style('visibility', 'hidden').classed('active', false);
+  })
+
+  d3.select("#turnon2011").on('click', function(){
+    d3.select('#turnon2011').classed('active', true);
+    d3.selectAll('.sexoffense_2011, .homicide_2011, #homicideamount_2011, #sexoffenseamount_2011, .childoffense_2011, #childoffense_2011').style('visibility', 'visible');
+    d3.selectAll('.sexoffense_2010, .homicide_2010, .sexoffense_2009, .homicide_2009, .sexoffense_2012, .homicide_2012, .sexoffense_2013, .homicide_2013, .homicideamount_2009, .safezone, #routesadded, #homicideamount_2009, #sexoffenseamount_2009, #homicideamount_2010, #sexoffenseamount_2010, #homicideamount_2012, #sexoffenseamount_2012, #homicideamount_2013, #sexoffenseamount_2013, .childoffense_2009, .childoffense_2010, .childoffense_2012, .childoffense_2013, #childoffense_2012, #childoffense_2010, #childoffense_2009, #childoffense_2013, #reductions').style('visibility', 'hidden').classed('active', false);
+  })
+
+  d3.select("#turnon2012").on('click', function(){
+    d3.select('#turnon2012').classed('active', true);
+    d3.selectAll('.sexoffense_2012, .homicide_2012, #homicideamount_2012, #sexoffenseamount_2012, .childoffense_2012, #childoffense_2012').style('visibility', 'visible');
+    d3.selectAll('.sexoffense_2010, .homicide_2010, .sexoffense_2011, .homicide_2011, .sexoffense_2009, .homicide_2009, .sexoffense_2013, .homicide_2013, .homicideamount_2009, .safezone, #routesadded, #homicideamount_2009, #sexoffenseamount_2009, #homicideamount_2010, #sexoffenseamount_2010, #homicideamount_2011, #sexoffenseamount_2011, #homicideamount_2013, #sexoffenseamount_2013, .childoffense_2009, .childoffense_2010, .childoffense_2011, .childoffense_2013, #childoffense_2009, #childoffense_2010, #childoffense_2011, #childoffense_2013, #reductions').style('visibility', 'hidden').classed('active', false);
+  })
+
+  d3.select("#turnon2013").on('click', function(){
+    d3.select('#turnon2013').classed('active', true);
+    d3.selectAll('.sexoffense_2013, .homicide_2013, .safezone, #routesadded, #homicideamount_2013, #sexoffenseamount_2013, #childoffense_2013, .childoffense_2013, #reductions').style('visibility', 'visible');
+    d3.selectAll('.sexoffense_2010, .homicide_2010, .sexoffense_2011, .homicide_2011, .sexoffense_2012, .homicide_2012, .sexoffense_2009, .homicide_2009 .homicideamount_2009, #homicideamount_2009, #sexoffenseamount_2009, #homicideamount_2010, #sexoffenseamount_2010, #homicideamount_2011, #sexoffenseamount_2011, #homicideamount_2012, #sexoffenseamount_2012, #childoffense_2009, #childoffense_2010, #childoffense_2011, #childoffense_2012, #childoffense_2012, #childoffense_2010, #childoffense_2011, #childoffense_2009').style('visibility', 'hidden').classed('active', false);
+  })
+
+
+  //multiPoint function puts points on the map
+  function multiPoint(locations) {
+  return {
+    type: "MultiPoint",
+    coordinates: locations.map(function(d) {
+      return [+d.Longitude, +d.Latitude];
+    })
+  };
+}
+
+
+
+				
+	</script>
+
+</body>
+
